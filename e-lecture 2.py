@@ -2,6 +2,7 @@
 import numpy as np
 import numpy.random as rnd
 import scipy.linalg as la
+
 #xr = rnd.get_state()
 
 #print(xr)
@@ -67,6 +68,81 @@ import scipy.linalg as la
 #soma = np.sum(b[:,0])
 
 #print(soma)
+#---------------------------------------------------------------------
+#Operations:
+
+
+# difference between matrix and array
+# note that the shape is given here as a tuple: (3, 3)
+#a = np.arange(9.0).reshape((3, 3))
+#m = np.matrix(a)
+
+# for example, multiplying 2 arrays
+#print(a * a)
+
+# or two matrices
+#print(m * m)
+
+# or mix them; they become matrices
+#print(a * m)
+
+# but if you need array behaviour, simply do
+#print np.array(m) * np.array(m)
+
+#eye-> identity matrices
 
 #operations 1
+
+#rnd.seed(3)
+
+#a = np.matrix(rnd.randn(5,5))
+
+#b = np.linalg.eigvals(a)
+#maxeig_arg = np.argmax(np.absolute(b))
+#maxeig = b[maxeig_arg]
+#mineig_arg = np.argmin(np.absolute(b))
+#mineig = b[mineig_arg]
+#print(maxeig)
+#print(mineig)
+
+#operations 2
+
+# ang_d = np.angle(3+4j)*180/np.pi
+#
+# ang_e = np.angle(-1-3j)*180/np.pi
+#
+# absolute_f = np.absolute(-8-1j)
+#
+# print(ang_d)
+# print(ang_e)
+# print(absolute_f)
+
+#operations 3
+
+# a = np.matrix(np.arange(0,5,0.1))
+# print(np.sum(np.sin(a)))
+
+#operations 4
+
+# rnd.seed(4)
+#
+# a = np.matrix(rnd.randn(20, 70))
+# print(a)
+# for i in range(20):
+#     for j in range(70):
+#         if not a[i,j] > 2:
+#             a[i,j] = 0
+# print("-----------------------")
+# print(a)
+# b=np.sum(a)
+# print(b)
+
+#operations 5
+
+rnd.seed(8)
+a = rnd.randn(5000)
+b = a[np.where(abs(a) <= 2)]
+c = len(b) / len(a) * 100
+
+print(c)
 
