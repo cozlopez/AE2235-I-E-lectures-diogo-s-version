@@ -1,5 +1,6 @@
 import control.matlab as c
-
+import matplotlib.pyplot as plt
+import numpy as np
 # Laplace variable
 # s = c.tf([1, 0], [1])
 #
@@ -74,4 +75,46 @@ import control.matlab as c
 # print((1/(1+h1*g)).num)
 # print((1/(1+h1*g)).den)
 
+#4.2 time domain signals
+
+#representiong a certain function:
+
+# t = np.arange(0, 10.01, 0.01)
+# x = np.sin(t)
+# plt.plot(t, x)
+# plt.show()
+
+#a ramp and hold input signal, of size 1, with a ramp starting at 1 second and completing at 5 seconds
+
+# dt = 0.04
+# t = np.arange(0.0, 30+dt, dt)
+# u = np.hstack( (np.zeros( (1.0/dt) ), np.arange(0, 1+dt/4, dt/4), np.ones( (25/dt) ) ) )
+# plt.plot(t, u)
+# plt.show()
+
 #4.2 signal
+
+# dt = 0.2
+# l = 20.
+# freq = 4.8
+# t = np.arange(0.0,l+dt,dt)
+#
+# sin = np.sin(t*(2*np.pi)*freq)
+#
+# plt.plot(t,sin)
+# plt.plot(t,np.zeros(int(l/dt)+1))
+# plt.show()
+
+#creating a ramp
+
+# dt = 0.15
+# l = 30.
+# t = np.arange(0.0,l+dt,dt)
+# l_ramp = 9.
+# size = 3.8
+# u = np.hstack((np.arange(0,size*(1+dt/l_ramp), size*dt/l_ramp), size*np.ones(int((l-l_ramp)/dt))))
+# s = sum(u)
+# print(s)
+# plt.plot(t,u)
+# plt.show()
+
