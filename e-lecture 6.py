@@ -67,10 +67,15 @@ import matplotlib.pyplot as plt
 # t_length = 20
 # sys = c.ss(A, B, C, D)
 # t= np.arange(0,t_length,dt)
-# output = c.lsim(sys, 0, t, X0= [1,0])
+# f1 = 3.9357078 #0.027858371518604926
+# f2 = 3.7197762 #0.02822810631125589
+# U = np.sin(f1*t)
+# output = c.lsim(sys, U, t, X0= [1,0])
 #
 # plt.plot(t, output[2][:,1])
 # plt.plot(t,np.zeros(int(t_length/dt))) #helps find point of intersection
 # plt.show()
 # # help(c.lsim)
+# print(output[2][int(10/dt):,1].max())
 
+#state space to transfer function
