@@ -1,6 +1,7 @@
 import numpy as np
 import control.matlab as c
 from scipy.linalg import eig
+import matplotlib.pyplot as plt
 #first description
 # a = np.matrix(""" 0       1      0   ;
 #                  -0.0071 -0.111  0.12;
@@ -49,4 +50,27 @@ from scipy.linalg import eig
 # print(C)
 # print("--Matrix D--")
 # print(D)
+
+#state space 2
+
+# # parameter values
+# m = 3.5
+# b = 9
+# k = 60
+# # matrices
+# A = np.matrix([[ -b/m, -k/m], [ 1, 0]])
+# B = np.matrix([[ 1/m], [ 0]])
+# C = np.matrix([[ 0, 1]])
+# D = np.matrix([[ 0]])
+# # system
+# dt = 0.01
+# t_length = 20
+# sys = c.ss(A, B, C, D)
+# t= np.arange(0,t_length,dt)
+# output = c.lsim(sys, 0, t, X0= [1,0])
+#
+# plt.plot(t, output[2][:,1])
+# plt.plot(t,np.zeros(int(t_length/dt))) #helps find point of intersection
+# plt.show()
+# # help(c.lsim)
 
