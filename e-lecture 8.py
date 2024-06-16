@@ -160,21 +160,21 @@ B = np.matrix([[-0.01, 0.06],
 
 #control of Moller SkyCarTM4kUHD brought to you by CarlsJunior Nascar Cup Series Visa Cash App Superslam
 
-s = c.tf([1,0],[1])
-
-K = 0.75
-
-G = K* (4*s**2 + 2*s +1)/(s*(1+ 0.1*s))
-
-H = 1/(s**2 * (s**2 + s + 4))
-
-sys = c.append(c.ss(H), c.ss(G))
-Q = [[1,2],[2,-1]]
-
-inputs = [2]
-
-outputs = [ 1,2]
-
-sys = c.connect(sys, Q, inputs, outputs)
-
-print(sys)
+# s = c.tf([1,0],[1])
+#
+# K = 0.75
+#
+# G = K* (4*s**2 + 2*s +1)/(s*(1+ 0.1*s))
+#
+# H = 1/(s**2 * (s**2 + s + 4))
+#
+# sys = c.append(c.ss(H), c.ss(G))
+# Q = [[1,2],[2,-1]]
+#
+# inputs = [2]
+#
+# outputs = [ 1,2]
+#
+# sys = c.connect(sys, Q, inputs, outputs)
+#
+# print(sys)
